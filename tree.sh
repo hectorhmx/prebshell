@@ -1,6 +1,6 @@
 #!/bin/bash
 arbolito(){
-for i in $1/*
+for i in $1/* ## recorre los archivos de uno en uno dentro de un directorio. i toma el valor de un path.
 do
 	if [ -d $i ];then
 		cd $i
@@ -14,7 +14,7 @@ do
 done
 }
 read -e a
-if [ -z $a ];then
+if [ -z $a ];then ## Si está vacía la ruta, se hará solo dentro de una capeta.
 	arbolito $PWD
 elif [ $a="/" ];then
 	arbolito
