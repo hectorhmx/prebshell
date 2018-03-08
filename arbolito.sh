@@ -11,7 +11,7 @@ do
 			printf '	' ## agrega tabulaciones para saber que tan profundo estamos
 		done
 		let b+=1
-		printf "\e[31m${i##*/}\n" ##le da color rojo a los directorios
+		printf "\e[31m${i##*/}\e[0m\n" ##le da color rojo a los directorios
 		arbolito $PWD $b	##recursion
 	elif [ -f "$i" ];then
 		for ((j=0;j<$b;j++))
