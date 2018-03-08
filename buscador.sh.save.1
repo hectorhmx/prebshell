@@ -2,17 +2,17 @@
 buscar(){
 for i in $1/*
 do
-	if [ -d "$i" ];then
+	if [ -d $i ];then
 		if [[ "$i" == *"$2" ]];then ##busca que el path termine en esa forma
-			echo "El directorio  esta contenido en $i"
+			echo "El directorio  esta contenido en $i "
 			while [ 1 ];do
 				echo "¿Seguir buscando? y/n"
 				read x
-				if [ "$x" == "y" ];then
+				if [ "$x" = "y" ];then
 					cd $i
 					buscar $PWD $2
 					break ## continua a la siguiente iteración
-				elif [ "$x" == "n" ];then
+				elif [ "$x" = "n" ];then
 					break 10000  ##se sale porque se sale
 				else
 					echo "error perro"
@@ -22,15 +22,15 @@ do
 			cd $i
 			buscar $PWD $2
 		fi
-	elif [ -f "$i" ];then
+	elif [ -f $i ];then
 		if [[ "$i" == *"$2"* ]];then
 			echo "El archivo esta contenido en $i"
                		while [ 1 ];do
                        		echo "¿Seguir buscando? y/n"
                         	read x
-                       		if [ "$x" == "y" ];then
+                       		if [ "$x" = "y" ];then
                                		break ## continua a la siguiente iteración
-                        	elif [ "$x" == "n" ];then
+                        	elif [ "$x" = "n" ];then
                                 	break 10000  ##se sale porque se sale
                         	else
                                 	echo "error perro"
