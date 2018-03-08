@@ -23,8 +23,13 @@ do
 		cd $casita
 		./arbolito.sh
 		cd $lugar
-	elif [[ "$a" == "juego1" ]];then
-		echo "mostrar juego 1"
+	elif [[ "$a" == "fork" ]];then
+		clear
+		lugar="$PWD"
+		cd $casita
+		cd juegos/fork
+		./fork.sh
+		cd lugar
 	elif [[ "$a" == "juego2" ]];then
 		echo "mostrar juego 2"
 	elif [[ "$a" == "juego3" ]];then
