@@ -51,9 +51,6 @@ done
 ##elif [ $a=  ];then
 ##	echo haz una busqueda real compa
 ##else
-echo "$1"
-echo "$2"
-echo "$#"
 cd $1
 buscar $1 $2
 ##fi
