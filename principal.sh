@@ -49,7 +49,7 @@ do
 	elif [[ "$a" == "fecha" ]];then
 		sudo /sbin/hwclock
 	elif [[ "$a" == 'exit' ]];then
-		echo "Escriba salir, no mame"
+		echo "Escriba salir, >:v"
 	else
 		$a $b $c $d $e $f $g
 	fi

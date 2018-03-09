@@ -3,7 +3,7 @@ trap '' 2 20
 intento=0
 while [ $intento -ne 3 ];do
 clear
-echo "dame un usuario"
+echo "Dame un usuario"
 read -e usuario
 if [[ -z $usuario ]];then
 	sudo su -c ./principal.sh
@@ -18,7 +18,7 @@ else
 	else
 		sudo su  -c ./principal.sh
 		if [[ $? -ne 0 ]];then
-			echo"ni pedo, se pondrá en modo no esencial"
+			echo"Ni modo, se pondrá en modo no esencial"
 			./principal.sh
 			exit 1000
 		else
