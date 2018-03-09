@@ -5,9 +5,9 @@ for i in $1/*
 do
 	if [ -d "$i" ];then
 		if [[ "$i" == *"$2" ]];then ##busca que el path termine en esa forma
-			echo "El directorio  esta contenido en $i"
+			echo -e "\e[34mEl directorio  esta contenido en $i\e[0m"
 			while [ 1 ];do
-				echo "¿Seguir buscando? y/n"
+				echo -e "\e[93m¿Seguir buscando? y/n\e[0m"
 				read x
 				if [ "$x" == "y" ];then
 					cd $i
@@ -16,7 +16,7 @@ do
 				elif [ "$x" == "n" ];then
 					break 10000  ##se sale porque se sale
 				else
-					echo "error perro"
+					echo -e "\e[91merror perro\e[0m"
 				fi
 			done
 		else
@@ -25,16 +25,16 @@ do
 		fi
 	elif [ -f "$i" ];then
 		if [[ "$i" == *"$2"* ]];then
-			echo "El archivo esta contenido en $i"
+			echo -e "\e[34mEl archivo esta contenido en $i\e[0m"
                		while [ 1 ];do
-                       		echo "¿Seguir buscando? y/n"
+                       		echo -e "\e[93m¿Seguir buscando? y/n\e[0m"
                         	read x
                        		if [ "$x" == "y" ];then
                                		break ## continua a la siguiente iteración
                         	elif [ "$x" == "n" ];then
                                 	break 10000  ##se sale porque se sale
                         	else
-                                	echo "error perro"
+                                	echo -e "\e[91merror perro\e[0m"
                         	fi
  			done
 		else
@@ -55,4 +55,4 @@ done
 cd $1
 buscar $1 $2
 ##fi
-echo Busqueda terminada
+echo -e "\e[93mBusqueda terminada\e[0m"

@@ -2,11 +2,15 @@
 ##realizará las capturas de la prebeshell.
 trap '' 2 20
 casita="$PWD"
+./instalar.sh
 clear
-echo "para conocer los comandos escribe HelpPlox"
+PS1="\e[46;97m$PWD//$(whoami)//$HOSTNAME\e[0m>>"
+echo -e "\e[41;37mLeSerge\e[0m y \e[44;97mHéctor\e[0m presentan su \e[91mPre\e[32mbe\e[34mshell\e[0m"
+echo -e "\e[36mPara conocer los comandos escribe HelpPlox\e[94m"
 while [ 1 ]; ##repetición hasta que se elija salir
 do
-	read -p  "$PWD //$HOSTTYPE//$HOSTNAME   " a b c d e f g ##prompt de la prebeshell
+	echo -e -n "$PS1"
+	read -e a b c d e f g ##prompt de la prebeshell
 	if [[ "$a" = "prebeplayer" ]];then ##estructura para elegir alguna opción.
 		lugar="$PWD"
 		cd $casita
@@ -18,7 +22,6 @@ do
 		./buscador.sh $b $c
 		cd $lugar
 	elif [[ "$a" == "salir" ]];then
-		export exit
 		exit 1000
 	elif [[ "$a" == "arbolito" ]];then
 		lugar="$PWD"
@@ -36,6 +39,7 @@ do
 		clear
 		lugar="$PWD"
 		cd $casita
+		cd juegos/lxhero
 		./lxhero.sh
 		cd $lugar
 	elif [[ "$a" == "juego3" ]];then
@@ -49,7 +53,7 @@ do
 	elif [[ "$a" == "fecha" ]];then
 		sudo /sbin/hwclock
 	elif [[ "$a" == 'exit' ]];then
-		echo "Escriba salir, >:v"
+		echo -e "\e[91mEscriba salir, >:v\e[94m"
 	else
 		$a $b $c $d $e $f $g
 	fi
