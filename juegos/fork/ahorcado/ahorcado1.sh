@@ -28,16 +28,16 @@ while [ $intentos -gt 0 ]; do
 		let intentos=intentos-1
 		echo -e "\n\nTe queda solo $intentos intento(s) :S"
 	fi
-	for ((i=0; i<${#palabra}; i++)); do
-		if [[ "${aux_array[$i]}" == "${array[$i]" ]]; then
-			let checar=checar+1
-		fi
-	done
-	if [ $checar -eq ${#palabra} ]; then
-		echo "Lo lograste! gracias por jugar ahorcado <3"
-		exit
-	else
-		echo "Siguiente!"
-	fi
+#	for ((i=0; i<${#palabra}; i++)); do
+#		if [[ "${aux_array[$i]}" == "${array[$i]" ]]; then
+#			let checar=checar+1
+#		fi
+#	done
+#	if [ $checar -eq ${#palabra} ]; then
+#		echo "Lo lograste! gracias por jugar ahorcado <3"
+#		exit
+#	else
+#		echo "Siguiente!"
+#	fi
 	echo ""
 done
