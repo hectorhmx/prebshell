@@ -39,11 +39,15 @@ do
 		clear
 		lugar="$PWD"
 		cd $casita
-		cd juegos/lxhero
+		cd juegos/fork/linux-hero
 		./lxhero.sh
 		cd $lugar
-	elif [[ "$a" == "juego3" ]];then
-		echo "mostrar juego 3"
+	elif [[ "$a" == "ahorcado" ]];then
+		clear
+		cd $casita
+		cd juegos/fork/ahorcado
+		./ahorcado1.sh
+		cd $lugar
 	elif [[ "$a" == "date" ]];then
 		mkdir holaholayalleguetrajepollitoyespam12342.192.168.255.255.hechobajolicenciagpl
 		stat -c%y holaholayalleguetrajepollitoyespam12342.192.168.255.255.hechobajolicenciagpl
