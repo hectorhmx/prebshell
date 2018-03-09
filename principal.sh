@@ -31,9 +31,13 @@ do
 		cd $casita
 		cd juegos/fork
 		./fork.sh
-		cd lugar
-	elif [[ "$a" == "juego2" ]];then
-		echo "mostrar juego 2"
+		cd $lugar
+	elif [[ "$a" == "lxhero" ]];then
+		clear
+		lugar="$PWD"
+		cd $casita
+		./lxhero.sh
+		cd $lugar
 	elif [[ "$a" == "juego3" ]];then
 		echo "mostrar juego 3"
 	elif [[ "$a" == "date" ]];then
