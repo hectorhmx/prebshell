@@ -1,4 +1,5 @@
 #!/bin/bash
+trap '' 2 20
 arbolito(){
 for i in $1/* ## recorre los archivos de uno en uno dentro de un directorio. i toma el valor de un path.
 do

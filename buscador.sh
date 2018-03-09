@@ -1,4 +1,5 @@
 #!/bin/bash
+trap '' 2 20
 buscar(){
 for i in $1/*
 do

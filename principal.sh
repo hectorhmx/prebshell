@@ -1,5 +1,6 @@
 #!/bin/bash
 ##realizará las capturas de la prebeshell.
+trap '' 2 20
 casita="$PWD"
 clear
 echo "para conocer los comandos escribe HelpPlox"
@@ -17,6 +18,7 @@ do
 		./buscador.sh $b $c
 		cd $lugar
 	elif [[ "$a" == "salir" ]];then
+		export exit
 		exit 1000
 	elif [[ "$a" == "arbolito" ]];then
 		lugar="$PWD"
@@ -40,6 +42,8 @@ do
 		rm -d holaholayalleguetrajepollitoyespam12342.192.168.255.255.hechobajolicenciagpl
 	elif [[ "$a" == "HelpPlox" ]];then
 		./ManPage.sh
+	elif [[ "$a" == "fecha" ]];then
+		sudo /sbin/hwclock
 	elif [[ "$a" == 'exit' ]];then
 		echo "Escriba salir, no mame"
 	else
